@@ -1,0 +1,61 @@
+﻿@model List<TestCalculator.ViewModels.HistoryViewModel>
+
+<div style="float:left">
+    <div>
+        <input id="firstNumb" value="null" type="hidden" />
+        <input id="SecondNumb" value="null" type="hidden" />
+        <input id="calcNumb" value="null" type="hidden" />
+        <input id="result" value="null" type="hidden" />
+        <input id="readyFunction" value="null" type="hidden" />
+        <div id="formula"></div>
+        <input id="calcul" disabled style="background-color:white" />
+        <button id="equally">=</button>
+    </div>
+    <div style="float:left">
+        <table cellspacing="2" >
+            <tr>
+                <td><button class="numbers btn" style="width: 100%">1</button></td>
+                <td>
+                    <button class="numbers btn" style="width: 100%">2</button>
+                </td>
+                <td><button class="numbers btn" style="width: 100%">3</button></td>
+                <td><button class="methodOfCulc btn" style="width: 100%">+</button></td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="numbers btn" style="width: 100%">4</button>
+                </td>
+                <td><button class="numbers btn" style="width: 100%">5</button></td>
+                <td><button class="numbers btn" style="width: 100%">6</button></td>
+                <td><button class="methodOfCulc btn" style="width: 100%">-</button></td>
+            </tr>
+            <tr>
+                <td><button class="numbers btn" style="width: 100%">7</button></td>
+                <td><button class="numbers btn" style="width: 100%">8</button></td>
+                <td><button class="numbers btn" style="width: 100%">9</button></td>
+                <td><button class="methodOfCulc btn" style="width: 100%">*</button></td>
+            </tr>
+            <tr>
+                <td><button class="btn" id="clearAll">AC</button></td>
+                <td><button class="numbers btn" style="width: 100%">0</button></td>
+                <td><button class="btn" id="clearCalc" style="width: 100%">C</button></td>
+                <td><button class="methodOfCulc btn" style="width: 100%">/</button></td>
+            </tr>  
+        </table>
+    </div>
+</div>
+
+<div style="float:left; margin-left:30px">
+    <div style="float:right">@Html.ActionLink("Обновить список за сегодня", "Index")</div>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li style="margin:5px">
+                <button class ="expression" style="background-color:white; border:0px; ">@item.Expression</button>
+            </li>
+        }
+    </ul>
+</div>
+
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script src="~/Scripts/Custom/Index.js"></script>
